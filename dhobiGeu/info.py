@@ -1,0 +1,5 @@
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'sk2000cs@gmail.com'
+EMAIL_HOST_PASSWORD = 'Balram#2000'
+EMAIL_PORT = 587
