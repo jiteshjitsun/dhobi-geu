@@ -14,7 +14,7 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes,force_str
 from django.core.mail import EmailMessage,send_mail
 
-def home(request) : 
+def home(request): 
     return render(request,'auth/index.html')
     # return HttpResponse("hare ram")
 
