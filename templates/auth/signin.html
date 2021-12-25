@@ -40,7 +40,7 @@
                  <strong>Message:</strong> {{ message }}
                  {% endfor %}
                   
-                <form class="flex flex-col pt-3 md:pt-8" action="/signin" method="post">
+                <form class="flex flex-col pt-3 md:pt-8" action="signin" method="post">
                     {% csrf_token %}
                     <div class="flex flex-col pt-4">
                         <label for="username" class="text-lg">Username</label>
@@ -55,7 +55,7 @@
                     <button type="submit" class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">Log IN</button>
                 </form>
                 <div class="text-center pt-12 pb-12">
-                    <p>Don't have an account? <a href="register.html" class="underline font-semibold">Register here.</a></p>
+                    <p>Don't have an account? <a href="signup" class="underline font-semibold">Register here.</a></p>
                 </div>
             </div>
 
