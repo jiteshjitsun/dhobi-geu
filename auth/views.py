@@ -105,7 +105,7 @@ def signin(request) :
 
 def signout(request) : 
     logout(request)
-    messages.success(request,"Logged out Successfully ")
+    messages.success(request,"GoodBye! see you again.")
     return redirect('home')
 
 def activate(request,uidb64,token):
