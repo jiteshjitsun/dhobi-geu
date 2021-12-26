@@ -108,18 +108,19 @@ def signout(request) :
     messages.success(request,"Logged out Successfully ")
     return redirect('home')
 
-def activate(request,uid64,token) :
-    try : 
-        uid = force_str(urlsafe_base64_decode(uid64))
+def activate(request,uidb64,token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
         myuser = User.objects.get(pk=uid)
-    except(TypeError,ValueError,OverflowError,User.DoesNotExist) :
+    except (TypeError,ValueError,OverflowError,User.DoesNotExist):
         myuser = None
-    
-    if myuser is not None and generate_token.check_token(myuser,token) : 
+
+    if myuser is not None and generate_token.check_token(myuser,token):
         myuser.is_active = True
+        # user.profile.signup_confirmation = True
         myuser.save()
         login(request,myuser)
-        return redirect('home')
-    else : 
+        messages.success(request, "Your Account has been activated!!")
+        return redirect('signin')
+    else:
         return render(request,'activation_failed.html')
-    
