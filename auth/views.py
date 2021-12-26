@@ -39,10 +39,11 @@ def signup(request) :
 
         if len(username) > 10 :
             messages.error(request,"username must be under 10 characters ")
+            return redirect('home')
 
         if pass1 != pass2 :
             messages.error(request,"Passwords didn't match ")
-
+            return redirect('home')
         if not username.isalnum() :
             messages.error(request,"Username must be alpha numeric ")
             return redirect('home')
@@ -62,7 +63,7 @@ def signup(request) :
 
         #confirmation email
         current_site = get_current_site(request)
-        email_subject = "confirm your email @dobhi geu - django login!"
+        email_subject = "confirm your email @dobhi geu - login!"
         message2 = render_to_string('email_confirmation.html',{
             'name' : myuser.first_name,
             'domain' : current_site.domain,
@@ -76,8 +77,7 @@ def signup(request) :
             [myuser.email],
         )
         email.fail_silently = True
-
-
+        email.send()
 
         return redirect('signin')
 
