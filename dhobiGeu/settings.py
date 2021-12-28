@@ -39,6 +39,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home',
+    'account',
+    'django_filters',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'dhobiGeu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
