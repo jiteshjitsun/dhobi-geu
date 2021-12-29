@@ -1,0 +1,59 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Home - Dhobi</title>
+        <meta name="description" content="Laundry &amp; Services">
+        <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+        <link rel="stylesheet" href="/static/assets/fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/static/assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/assets/fonts/fontawesome5-overrides.min.css">
+        <link rel="stylesheet" href="/static/assets/css/Highlight-Clean.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet" href="/static/assets/css/Map-Clean.css">
+        <link rel="stylesheet" href="/static/assets/css/Search-Input-Responsive-with-Icon.css">
+        <link rel="stylesheet" href="/static/assets/css/Team-Clean.css">
+    </head>
+
+
+<body>
+
+    <!-- navbar starts -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+        <div class="container"><a class="navbar-brand bg-dark shadow-lg">Dhobi</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="signup">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends -->
+    <div>
+    <!-- other html files -->
+    {% block content %}
+
+
+    {% endblock content %}
+    <!-- ends other -->
+    </div>
+   
+
+    <!-- footer starts here -->
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="text-center text-white m-0 small">Copyright&nbsp;© Dhobi 2021</p>
+        </div>
+    </footer>
+    <!-- footer ends here -->
+    <script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
+</html>

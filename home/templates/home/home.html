@@ -1,0 +1,64 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %} 
+
+<header class="text-center text-white masthead">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">We do your laundry</h1>
+            <h2 class="masthead-subheading mb-0">at affordable rate.</h2><a class="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#">give your dirty one's</a>
+        </div>
+    </div>
+    <div class="d-sm-flex bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <div class="card m-auto" style="max-width:850px">
+            <div class="card-body">
+                <form class="d-flex align-items-center"><i class="fas fa-search d-none d-sm-block h4 text-body m-0"></i><input class="form-control form-control-lg flex-shrink-1 form-control-borderless" type="search" placeholder="Search topics or keywords" name="searchbar"><button class="btn btn-success btn-lg" type="submit">Search</button></form>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="team-clean">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Testinomials</h2>
+            <p class="text-center">Here From our present customers</p>
+        </div>
+        <div class="row people">
+            <div class="col-md-6 col-lg-4 item"><img class="rounded-circle" src="/media/alison-wang-mou0S7ViElQ-unsplash.jpg">
+                <h3 class="name">person 1</h3>
+                <p class="title">STUDENT</p>
+                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                <!-- <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div> -->
+            </div>
+            <div class="col-md-6 col-lg-4 item"><img class="rounded-circle" src="/media/alison-wang-mou0S7ViElQ-unsplash.jpg">
+                <h3 class="name">person 2</h3>
+                <p class="title">STUDENT</p>
+                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                <!-- <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div> -->
+            </div>
+            <div class="col-md-6 col-lg-4 item"><img class="rounded-circle" src="/media/alison-wang-mou0S7ViElQ-unsplash.jpg">
+                <h3 class="name">person 3</h3>
+                <p class="title">STUDENT</p>
+                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                <!-- <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="map-clean">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Location </h2>
+            <p class="text-center">we are serving in Dehradun only</p>
+        </div>
+    </div><iframe allowfullscreen="" frameborder="0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCkZDiw5JCJ8cMgD74DV4VTyummN6izZuQ&amp;q=graphic+era+university&amp;zoom=15" data-aos="zoom-in" width="100%" height="450"></iframe>
+</section>
+
+{% endblock content %}
