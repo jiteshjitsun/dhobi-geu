@@ -1,15 +1,31 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
 
-    <section class="login-dark">
-        <form method="post">
+    <section>
+
+        <br><br><br><br>    
+        {% if user.is_authenticated %}
+        <div class="mb-3 m-5">
+            <p >Welcome {{ user.username }}</p>
+            <a  href="/logout"><button>logout</button></a>
+        </div>
+           
+        {% else %}
+            <div class="mb-3">
+                <a href="{% provider_login_url 'google' %}">
+                <button style="margin-left: 350px;" class="btn btn-primary d-block w-50" type="submit">Log in with google</button>
+                </a>
+            </div>
+        {% endif %}
+        <!-- <form method="post">
             <h2 class="visually-hidden">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
             <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
             <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a>
-        </form>
+            <div class="mb-3"><button class="btn btn-primary d-block w-50" type="submit">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a>
+        </form> -->
     </section>
 
 {% endblock content %}
