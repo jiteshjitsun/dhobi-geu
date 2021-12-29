@@ -9,3 +9,6 @@ def signin(request):
 
 def signup(request):
     return render(request, 'home/signup.html')
+
+def contactForm(request):
+    return render(request, 'home/contactForm.html')
