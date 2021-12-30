@@ -1,8 +1,10 @@
 from django.shortcuts import render
-
+from .models import Product
 # Create your views here.
 def home(request):
-    return render(request,'home/home.html')
+    products = Product.objects.all()
+    context = {'products':products}
+    return render(request,'home/home.html',context)
 
 def signin(request):
     return render(request, 'home/login.html')

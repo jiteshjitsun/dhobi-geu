@@ -29,6 +29,31 @@
         </div>
     </div>
 </div>
+
+<!-- items section  -->
+
+<div class="row" id="items">
+    {% for product in products %}
+    <div class="col-lg-4" style="float: inline-end; box-shadow: aqua; ">
+        <img class="thumbnail" src="{{product.imageURL}}"  style="border-top-left-radius: 22px; border-top-right-radius: 22px;">
+        
+        <div class="box-element product" style="border-bottom-left-radius: 22px; border-bottom-right-radius: 22px;">
+            <br>
+            <h6><strong>{{product.name}}</strong></h6>
+            <hr>
+            {% if user.is_authenticated %}
+            <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart" style="border-radius: 22px;">Add to Cart</button>
+            {% else %}
+            <p>please login to add product</p>
+            {% endif %}
+            <h4 style="display: inline-block; float: right"><strong>Rs.{{product.price}}</strong></h4>
+            
+        </div>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+<!-- item section ends here -->
 <section class="team-clean">
     <div class="container">
         <div class="intro">
