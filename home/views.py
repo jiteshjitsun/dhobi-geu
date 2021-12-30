@@ -12,3 +12,6 @@ def signup(request):
 
 def contactForm(request):
     return render(request, 'home/contactForm.html')
+
+def userprofile(request):
+    return render(request, 'home/userprofile.html')

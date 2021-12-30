@@ -7,7 +7,12 @@
     <div class="masthead-content">
         <div class="container">
             <h1 class="masthead-heading mb-0">We do your laundry</h1>
-            <h2 class="masthead-subheading mb-0">at affordable rate.</h2><a class="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#">give your dirty one's</a>
+            <h2 class="masthead-subheading mb-0">at affordable rate.</h2>
+            {% if user.is_authenticated %}
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="userprofile/">give your dirty one's</a>
+            {% else %}
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="accounts/google/login">give your dirty one's</a>
+            {% endif %}
         </div>
     </div>
     <div class="d-sm-flex bg-circle-1 bg-circle"></div>
