@@ -33,20 +33,40 @@
 <!-- items section  -->
 
 <div class="row" id="items">
-    {% for product in products %}
+    {% for product in object_list %}
     <div class="col-lg-4" style="float: inline-end; box-shadow: aqua; ">
-        <img class="thumbnail" src="{{product.imageURL}}"  style="border-top-left-radius: 22px; border-top-right-radius: 22px;">
+        <img class="thumbnail" src="{{product.imageUrl}}"  style="border-top-left-radius: 22px; border-top-right-radius: 22px;">
         
         <div class="box-element product" style="border-bottom-left-radius: 22px; border-bottom-right-radius: 22px;">
             <br>
-            <h6><strong>{{product.name}}</strong></h6>
+            <h6><strong>Category: {{product.get_category_display}}</strong></h6>
             <hr>
             {% if user.is_authenticated %}
-            <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart" style="border-radius: 22px;">Add to Cart</button>
+            <a href="{{ product.get_absolute_url }}">
+                <button class="btn btn-primary">Add to cart</button>
+            </a>
             {% else %}
             <p>please login to add product</p>
+            <!-- {% comment %} <form class="d-flex justify-content-left"> -->
+                <!-- Default input -->
+                <!-- <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px"> -->
+                
+                    <button href="" class="btn btn-primary btn-md my-0 p" type="submit">
+                        Add to cart
+                      </button>
+                </a>
+                
+  
+              <!-- </form> {% endcomment %} -->
+  
             {% endif %}
-            <h4 style="display: inline-block; float: right"><strong>Rs.{{product.price}}</strong></h4>
+            <h4 style="display: inline-block; float: right"><strong>
+                {% if product.discount_price %}
+                    Rs.{{ product.discount_price }}
+                {% else %}
+                    Rs.{{ product.price }}
+                {% endif %}
+            </strong></h4>
             
         </div>
         <hr>

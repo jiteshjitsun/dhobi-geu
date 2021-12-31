@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
+    'crispy_forms',
+    'django_countries',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -70,7 +72,7 @@ ROOT_URLCONF = 'dhobiGeu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

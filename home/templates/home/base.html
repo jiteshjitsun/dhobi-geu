@@ -1,5 +1,6 @@
 
 {% load static %}
+{% load cart_template_tags %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +25,7 @@
         <link rel="stylesheet" href="/static/assets/css/Registration-Form-with-Photo.css">
         <link rel="stylesheet" href="/static/assets/css/Contact-Form-Clean.css">
         <link rel="stylesheet" href="/static/assets/css/Account-setting-or-edit-profile.css">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
         <script type="text/javascript">
@@ -89,10 +90,10 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="accounts/signup">Sign Up</a></li>
                     <li class="nav-item"><a class="nav-link" href="accounts/google/login">Log In</a></li>
-                    <a href="{% url 'cart' %}">
+                    <a href="{% url 'home:cart' %}">
                         <img  id="cart-icon" src="/media/Blue_Optical_Illusion_Corporate_Logo-removebg-preview (1).png" style="height: 70px;width: 70px;">
                     </a>
-                    <p id="cart-total">{{cartItems}}</p>
+                    <p id="cart-total">{{ request.user|cart_item_count }} </p>
                 </ul>
             </div>
         </div>
