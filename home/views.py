@@ -81,7 +81,7 @@ def processOrder(request):
 	if total == order.get_cart_total:
 		order.complete = True
 	order.save()
-
+	
 	if order.shipping == True:
 		ShippingAddress.objects.create(
 		customer=customer,
@@ -96,7 +96,10 @@ def processOrder(request):
 
 
 def signin(request):
-    return render(request, 'home/login.html')
+	if request.user.is_authenticated:
+		customer = request.user
+		
+	return render(request, 'home/login.html')
 
 def signup(request):
     return render(request, 'home/signup.html')
